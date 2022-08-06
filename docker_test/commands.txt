@@ -1,0 +1,13 @@
+FROM node:alpine # install node image where apline distribution
+COPY . /app  # make app dir and copy project
+WORKDIR /app  # save app.js in work directory
+CMD node app.js  # run app.js
+
+# build docker build 
+docker build -t docket_test .  # -t means tag . means current directory
+
+# see image
+docker images or docker image ls
+
+# run
+docker run image_name
