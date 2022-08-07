@@ -11,3 +11,12 @@ docker images or docker image ls
 
 # run
 docker run image_name
+
+# docker login
+docker login
+
+# upload
+docker tag docket_test:2bc154b61223 shosen/docket_test:1.1.0
+
+# push
+docker push shosen/docker_test
