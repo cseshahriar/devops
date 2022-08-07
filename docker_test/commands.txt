@@ -17,6 +17,13 @@ docker login
 
 # upload
 docker tag docket_test:2bc154b61223 shosen/docket_test:1.1.0
+docker tag 2bc154b61223 shosen/docket_test
 
-# push
+# docker push
 docker push shosen/docker_test
+
+# docker pull
+docker pull shosen/docker_test:latest
+
+# run from docker image
+docker run shosen/docker_test
