@@ -47,7 +47,7 @@ FROM python:3.8-slim-buster
 
 WORKDIR /app
 
-COPy requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 COPY . .
 CMD ["python3", "manage.py", "runserver", "127.0.0.1:8000"]
@@ -58,3 +58,53 @@ docker run --publish 9000:9000 python-django
 
 # images
 docker images
+
+
+# stop images
+docker kill $(docker ps -q)
+
+# remove all docker container
+docker rm $(docker ps -a -q)
+
+
+# ========================== start a django project with docker ===============
+docker-compose.yml
+
+version: '3.8'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 127.0.0.0:8000
+
+# build
+docker-compose build
+
+# docker images
+REPOSITORY           TAG               IMAGE ID       CREATED        SIZE
+<none>               <none>            40b760dd038d   44 hours ago   159MB
+app                  django            dcdcb7a6e287   44 hours ago   159MB
+
+# run
+docker-compose run --rm app django-admin startproject core .
+
+# docker-compose up
+
+# docker container ls
+
+# List containers
+docker container ls	
+
+# Pause all processes within one or more containers
+docker container pause	
+
+# List port mappings or a specific mapping for the container
+docker container port	
+
+# Remove all stopped containers
+docker container prune	
