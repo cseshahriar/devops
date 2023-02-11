@@ -1,0 +1,64 @@
+====================== ec2 =============================
+connect with ssh:
+ssh -i ".....pem" ec2-user@ec.ip.compute-1.amazonaws.com
+
+switch root user : sudo -i
+exit root user: exit
+user: ec2-user
+====================== directory commands ==============
+ls /  # root dir
+ls /bin # all command line utilities
+ls /boot # startup files
+ls /etc # all configurations
+ls /dev # all hardware and software device everything
+ls /home # home dir fr every user 
+ls /lib # libraries for kernal 
+ls /mnt # mounting
+ls /opt # app application bineries
+ls /proc # kernel related process
+ls /root # home dir for root user
+ls /sbin # sys administration commands 
+ls /temp # temp dir
+ls /usr # all the small program thant access varius users
+ls /var # all variable and logs 
+
+===================== browsing dir and files =============
+pwd # present work dir
+ls # list of all sub dir
+mkdir # make dir
+cd dir_name # change dir
+cat > file_name.ext # append
+	type text... ctrl + c
+	
+ls -l # long listing format
+ls -a # list all file include hiding 
+ls -r # all content with sub dir
+cp source distination # copy
+mv source distination # move file
+rm file_name # remove dir
+rm -r subdir # remove sub dir
+
+======================= install software =====================
+yum repolist
+yum list installed
+yum grouplist
+
+yum install httpd # install
+service httpd start # search start
+service httpd status
+vi /var/www/html/index.html
+
+yum install curl
+curl localhost 80
+yum remove httpd  # remove software and packages
+
+====================== logs ===================================
+tail -5 /var/log/yum.log
+yum history  # history
+yum search java # search
+
+====================== vi =======================================
+vi file_name.txt 
+i  # insert
+esc # exit i
+:wq # save nad quit
