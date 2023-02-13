@@ -1,0 +1,16 @@
+yum install docker 
+docker --version
+
+docker info
+service docker start
+service docker status
+docker info
+
+docker images
+docker run hello-world
+docker run -it ubuntu bash
+docker images
+
+docker pull mysql:5.7
+docker images
+ 
