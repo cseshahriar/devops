@@ -14,3 +14,72 @@ docker images
 docker pull mysql:5.7
 docker images
  
+docker images # list of docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+	
+docker run hello-world # run images
+  Unable to find image 'hello-world:latest' locally
+  latest: Pulling from library/hello-world
+  2db29710123e: Pull complete 
+  Digest: sha256:aa0cc8055b82dc2509bed2e19b275c8f463506616377219d9642221ab53cf9fe
+  Status: Downloaded newer image for hello-world:latest
+
+	Hello from Docker!
+	This message shows that your installation appears to be working correctly.
+	
+docker run -it ubutu bash  # -it means interective
+	
+	 
+docker images # image show command 
+	REPOSITORY    TAG       IMAGE ID       CREATED         SIZE
+	ubuntu        latest    58db3edaf2be   2 weeks ago     77.8MB
+	hello-world   latest    feb5d9fea6a5   16 months ago   13.3kB
+
+
+docker pull mysql:5.7  # pull from docker hub
+
+docker run
+----------
+docker run --help
+
+-a, --attach list
+-c, --cpu-shares int  
+-d, --detach 
+-e, --env list  
+-h, --hostname string  
+-i, --interactive  
+-l, --label list 
+-m, --memory bytes  
+-p, --publish list                   Publish a container's port(s) to the host
+-P, --publish-all 
+-t, --tty 
+-u, --user string 
+-v, --volume list 
+-w, --workdir string 
+
+# run container
+sudo -i
+docker run -i -d -t -p 80:80 nginx # run with prot :80
+docker images
+
+docker ps # status of containers
+
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS              PORTS                               NAMES
+c86d1983e0b6   nginx     "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp   flamboyant_morse
+
+# open 80 port from security group
+http://ec2-34-207-221-66.compute-1.amazonaws.com/
+
+stop container
+-------------
+docker stop container id / c86d1983e0b6
+
+
+list all container
+-----------------
+docker ps -a
+
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS     NAMES
+c86d1983e0b6   nginx         "/docker-entrypoint.…"   14 minutes ago   Exited (0) 59 seconds ago             flamboyant_morse
+74411be0c1e4   ubuntu        "bash"                   2 days ago       Exited (0) 2 days ago                 gallant_chatterjee
+f975dd692be2   hello-world   "/hello"                 2 days ago       Exited (0) 2 days ago                 xenodochial_yonath
