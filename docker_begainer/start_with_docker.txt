@@ -1,0 +1,107 @@
+what's is docker?
+----------------
+Docker is an open platform that enables users to develop,
+ship, and run applications with ease. Docker software is
+packaged as containers- a docker standardized unit.
+These containers have all the elements, such as system tools,
+libraries, runtime, etc required by the software. In this lesson,
+you will learn all the basics of Docker and how to set it up 
+along with a guide on choosing the right plan as per your needs.
+
+Docker is an Os-level virtualization software platform that enables
+developers and IT administrator to create, deploy and run applications in a docker container with all their dependencies
+
+where is docker used in devops?
+planing(git) -> building(gradle) -> testing(Selenium) -> deployment(docker) -> monitoring(nagios)
+
+Advantage:
+----------
+Rapid deployment
+portability
+better efficiency
+fast configuration
+scalability
+security
+
+how does docker works?
+----------------------
+
+
+Client        |
+   |          |
+Docker CLI    |
+   |          |
+REST API      | docker client
+   |          |
+Server        |
+   |          |
+Docker Daemon |
+
+
+components of docker
+--------------------
+
+Docker client and server
+docker images
+docker registry
+docker container
+
+docker client:
+docker engine or docker is a client server application
+that builds executes containers using docker components
+
+docker client -> REST API -> 
+
+[docker client]
+      | REST API 
+docker host 
+[
+    docker daemon
+    [
+        container
+        container
+    ]
+
+    docker registry
+    [
+        images
+    ]
+    
+]
+
+docker images
+-------------
+A docker image is a template of instructions which is used 
+to create containers
+
+A docker image is built using a file called docker file
+it is comprised of multiple layers
+it is comprised of multiple layers
+by default docker image starts with a base layer
+
+[docker file ] - [docker image] -> [docker container]
+
+[
+    layer 3
+    layer 2
+    layer 1
+    base image layer(ubuntu 18.04)
+]
+
+
+
+docker image components of docker 
+-----------------------------------
+consider an example of docker image consisting of four layers
+
+from ubuntu 18.04
+PULL ./file
+RUN make /file
+CMD python /file/file.py
+
+
+container layers (R/W)   |
+CMD python /file/file.py |
+run make /file           |
+pull ./file              |
+from ubuntu 18.4         |
